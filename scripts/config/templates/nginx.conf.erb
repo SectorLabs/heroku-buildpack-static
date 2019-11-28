@@ -109,6 +109,7 @@ http {
       # can reuse variable set above
       proxy_pass $<%= hash['name'] %>;
       proxy_ssl_server_name on;
+      proxy_cookie_domain bayut.com bayut-profolio-hackathon.herokuapp.com;
       <% %w(http https).each do |scheme| %>
       proxy_redirect <%= hash["redirect_#{scheme}"] %> <%= location %>;
       <% end %>
